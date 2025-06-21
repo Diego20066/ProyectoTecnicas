@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color:white;
+}
+header {
+    /* cambiar color */ 
+    background-color: blue ;
+    /* Dar espaciado */
+    padding:10px 20px ;
+    /* Alinear los elementos */
+    display: flex;
+    /* Alinear al medio */
+    align-items: Center;
+    /* Da espacio entre elementos */
+    justify-content: space-between;
+}
+header h1 {
+    margin: 0;
+    color: white
+}
+/* se trabaja con nav en el header por eso no se pone header nav a  */
+nav a {
+    color:white;
+    margin-left: 15px ;
+    /* quitar subrayado */
+    text-decoration: none;
+}
+/* Personalizar cada apartado del contenedor */
+.container{
+    display: flex;
+    padding: 40px;
+    /* Le da un espaciado entre contenedores */
+    gap:45px
+
+}
+.form-section, .table-section{
+padding: 20px;
+/* Le da duseño a las sombras */
+box-shadow: 0 0 10px;
+/* El div ocupa todo el ancho */
+flex: 1;
+/* Le da borde redondeado a las esquinas */
+border-radius: 4px;
+}
+.form-section h2, .table-section {
+    margin: 0;
+}
+.form-group input {
+    margin-top: 15px;
+}
+.form-group input {
+    /* Ancho del contenedor */
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    /* Incluir un padding y el ancho automaticamente */
+    box-sizing: border-box;
+}
+.btn-guardar, .btn-editar, .btn-eliminar{
+    width: 100%;
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-guardar:hover, .btn-editar:hover, .btn-eliminar:hover {
+    opacity: 0.8;
+}
+.table-section{
+padding: 20px;
+/* Le da duseño a las sombras */
+box-shadow: 0 0 10px;
+/* El div ocupa todo el ancho */
+flex: 1;
+/* Le da borde redondeado a las esquinas */
+border-radius: 4px;
+}
+table{
+    width: 100%;
+    margin-top: 25px;
+    border-collapse: collapse;
+}
+table th, table td{
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid;
+}
+.btn-editar{
+    background-color: blue;
+    color:white;
+    border: none;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-eliminar{
+    background-color: rgb(255, 17, 0);
+    color:white;
+    border: none;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 260px;
+      text-align: center;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      color: #222;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+      margin: 10px 0 20px;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .card a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gestión de Datos</h1>
+  <div class="container">
+    <div class="card">
+      <h2>Gestión de cursos</h2>
+      <p>Permite crear una tabla con datos de materias y créditos</p>
+      <a href="./pagina1.html">Ver Gestión</a>
+    </div>
+
+    <div class="card">
+      <h2>Gestión de carreras</h2>
+      <p>Permite crear una tabla con datos de carreras y sueldos</p>
+      <a href="./pagina2.html">Ver Gestión</a>
+    </div>
+
+    <div class="card">
+      <h2>Gestión de vehículos</h2>
+      <p>Permite crear una tabla con datos de vehículos, marcas y precios</p>
+      <a href="./pagina3.html">Ver Gestión</a>
+    </div>
+  </div>
+</body>
+</html>
