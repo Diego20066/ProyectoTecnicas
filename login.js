@@ -1,15 +1,3 @@
-// const user = "admin";
-// const pasword = "123456";
-
-// const userInput = document.getElementById("username");
-// const paswordInput= document.getElementById("pasword");
-// if (user === userInput & pasword === paswordInput){
-//     alert("Bienvenido")
-// }else{
-//     alert("Ingrese los credenciales nuevamente")
-// }
-// login.js
-
 document.addEventListener('DOMContentLoaded', () => {
   const user = "admin";
   const password = "123456";
@@ -23,10 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordInput = document.getElementById("password").value.trim();
 
     if (usernameInput === user && passwordInput === password) {
-      // Si las credenciales son correctas, redirige
-      window.location.href = 'Menu.html'; // cámbialo por tu página destino
+      window.location.href = 'Menu.html'; 
     } else {
-      // Si no, muestra una alerta
       alert("Ingrese sus credenciales nuevamente");
     }
   });
