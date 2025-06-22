@@ -38,7 +38,7 @@ function agregarCursosATabla(curso, index) {
     const fila = document.createElement("tr");
 
     fila.innerHTML = `
-        <td>${index}</td>
+        <td>${index + 5}</td>
         <td>${curso.modelo}</td>
         <td>${curso.marca}</td>
         <td>${curso.precio}</td>

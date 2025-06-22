@@ -1,8 +1,8 @@
 class Curso {
-    constructor(codigo, carrera, salario) {
-        this.codigo = codigo;
-        this.carrera = carrera;
-        this.salario = salario;
+    constructor(facultad, modalidad, estado) {
+        this.facultad = facultad;
+        this.modalidad = modalidad;
+        this.estado = estado;
     }
 }
 
@@ -18,16 +18,16 @@ function guardarCurso() {
 }
 
 function guardarCursoNuevo() {
-    const codigo = document.getElementById("codigo").value.trim();
-    const carrera = document.getElementById("carrera").value.trim();
-    const salario = document.getElementById("salario").value.trim();
+    const facultad = document.getElementById("facultad").value.trim();
+    const modalidad = document.getElementById("modalidad").value.trim();
+    const estado = document.getElementById("estado").value.trim();
 
-    if (!codigo || !carrera || !salario) {
+    if (!facultad || !modalidad || !estado) {
         alert("Por favor ingrese datos");
         return;
     }
 
-    const nuevoCurso = new Curso(codigo, carrera, salario);
+    const nuevoCurso = new Curso(facultad, modalidad, estado);
     cursos.push(nuevoCurso);
     agregarCursosATabla(nuevoCurso, cursos.length);
     limpiarFormulario();
@@ -38,10 +38,10 @@ function agregarCursosATabla(curso, index) {
     const fila = document.createElement("tr");
 
     fila.innerHTML = `
-        <td>${index}</td>
-        <td>${curso.codigo}</td>
-        <td>${curso.carrera}</td>
-        <td>${curso.salario}</td>
+        <td>${index + 5}</td>
+        <td>${curso.facultad}</td>
+        <td>${curso.modalidad}</td>
+        <td>${curso.estado}</td>
         <td>
             <button class="btn-editar">editar</button>
             <button class="btn-eliminar">eliminar</button>
@@ -60,9 +60,9 @@ function agregarCursosATabla(curso, index) {
 }
 
 function limpiarFormulario() {
-    document.getElementById("codigo").value = "";
-    document.getElementById("carrera").value = "";
-    document.getElementById("salario").value = "";
+    document.getElementById("facultad").value = "";
+    document.getElementById("modalidad").value = "";
+    document.getElementById("estado").value = "";
 }
 
 function eliminarCurso(indice) {
@@ -77,26 +77,26 @@ function eliminarCurso(indice) {
 
 function mostrarCursoAcampos(indice) {
     const curso = cursos[indice];
-    document.getElementById("codigo").value = curso.codigo;
-    document.getElementById("carrera").value = curso.carrera;
-    document.getElementById("salario").value = curso.salario;
+    document.getElementById("facultad").value = curso.facultad;
+    document.getElementById("modalidad").value = curso.modalidad;
+    document.getElementById("estado").value = curso.estado;
     cursoEnEdicion = indice;
     document.querySelector(".btn-guardar").textContent = 'Actualizar';
 }
 
 function actualizarCursoExistente() {
-    const codigo = document.getElementById("codigo").value.trim();
-    const carrera = document.getElementById("carrera").value.trim();
-    const salario = document.getElementById("salario").value.trim();
+    const facultad = document.getElementById("facultad").value.trim();
+    const modalidad = document.getElementById("modalidad").value.trim();
+    const estado = document.getElementById("estado").value.trim();
 
-    if (!codigo || !carrera || !salario) {
+    if (!facultad || !modalidad || !estado) {
         alert("Por favor ingrese datos");
         return;
     }
 
-    cursos[cursoEnEdicion].codigo = codigo;
-    cursos[cursoEnEdicion].carrera = carrera;
-    cursos[cursoEnEdicion].salario = salario;
+    cursos[cursoEnEdicion].facultad = facultad;
+    cursos[cursoEnEdicion].modalidad = modalidad;
+    cursos[cursoEnEdicion].estado = estado;
 
     document.getElementById("tabla-cursos").innerHTML = "";
     cursos.forEach((curso, i) => agregarCursosATabla(curso, i + 1));

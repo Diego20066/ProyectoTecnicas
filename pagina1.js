@@ -53,13 +53,13 @@ function agregarCursosATabla(curso, index){
     const tbody = document.getElementById("tabla-cursos")
    const fila = document.createElement("tr")
    fila.innerHTML = `
-        <td>${index}</td>
+        <td>${index + 5}</td>
              <td>${curso.codigo}</td>
             <td>${curso.nombre}</td>
             <td>${curso.creditos}</td>
             <td>
-                 <button class="btn-editar" >editar</button>
-                 <button class="btn-eliminar">eliminar</button>
+                <button class="btn-editar" >editar</button>
+                <button class="btn-eliminar">eliminar</button>
              </td>
    `;
    /*addEventListener: ecucha los eventos realizados: clics, movimientos de mouse, al teclear*/
