@@ -21,13 +21,16 @@
         <div class="form-section">
              <h2>Gestión de Carreras</h2>
                 <div class="form-group">
-                <input type="text" placeholder="facultad" id="facultad">
+                <input type="text" placeholder="Ingrese la facultad" id="facultad">
              </div>
                 <div class="form-group">
-                <input type="text" placeholder="modalidad" id="modalidad">
+                <input type="text" placeholder="Ingrese la modalidad" id="modalidad">
             </div>
                 <div class="form-group">
-                 <input type="text" placeholder="estado" id="estado">
+                 <input type="number" placeholder="Ingrese un numero del 1 al 10" id="semestre" min="1" max="10" required>
+            </div>
+                <div class="form-group">
+                 <input type="text" placeholder="Ingrese el estado de la carrera" id="estado">
              </div>
                <button class="btn-guardar" onclick="guardarCurso()">Guardar</button>
             </div>
@@ -41,6 +44,7 @@
                             <th>#</th>
                             <th>facultad</th>
                             <th>modalidad</th>
+                            <th>semestres</th>
                             <th>estado</th>
                             <th>Opciones</th>
                         </tr>
@@ -49,6 +53,7 @@
                             <td>1</td>
                             <td>medicina</td>
                             <td>presencial</td>
+                            <td>10</td>
                             <td>activa</td>
                             <td>
                             <button class="btn-editar">Editar</button>
@@ -60,6 +65,7 @@
                             <td>2</td>
                             <td>ingenieria en sistemas</td>
                             <td>híbrida</td>
+                            <td>8</td>
                             <td>activa</td>
                             <td>
                                 <button class="btn-editar">Editar</button>
@@ -71,6 +77,7 @@
                             <td>3</td>
                             <td>derecho</td>
                             <td>virtual</td>
+                            <td>8</td>
                             <td>activa</td>
                             <td>
                                 <button class="btn-editar">Editar</button>
@@ -82,6 +89,7 @@
                             <td>4</td>
                             <td>arquitectura</td>
                             <td>virtual</td>
+                            <td>8</td>
                             <td>inactiva</td>
                             <td>
                                 <button class="btn-editar">Editar</button>
@@ -93,6 +101,7 @@
                             <td>5</td>
                             <td>psicología</td>
                             <td>presencial</td>
+                            <td>8</td>
                             <td>inactiva</td>
                             <td>
                                 <button class="btn-editar">Editar</button>

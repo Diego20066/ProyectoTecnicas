@@ -1,0 +1,121 @@
+/* Reset y fuente general */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+/* Encabezado del sitio */
+header {
+    background-color: #004aad;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor general */
+.container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+/* Estilos comunes para formularios y tablas */
+.form-section, .table-section {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* Títulos internos */
+.form-section h2, .table-section h2 {
+    margin-top: 0;
+}
+
+/* Grupos de entrada */
+.form-group {
+    margin-top: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Botón de guardar */
+.btn-guardar, .btn-editar, .btn-eliminar {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Colores diferenciados */
+.btn-guardar {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-editar {
+    background-color: #007bff;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.btn-eliminar {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Hover en botones */
+.btn-guardar:hover,
+.btn-editar:hover,
+.btn-eliminar:hover {
+    opacity: 0.85;
+}
+
+/* Tabla de entregas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background-color: white;
+}
+
+table th, table td {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
