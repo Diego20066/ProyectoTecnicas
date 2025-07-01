@@ -88,7 +88,7 @@ function guardarCursoNuevo() {
         return;
     }
 
-    if (semestre < 1 || semestre > 10) {
+    if (semestre < 8 || semestre > 10) {
         alert("El número de semestres debe estar entre 1 y 10.");
         return;
     }
