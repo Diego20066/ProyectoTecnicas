@@ -1,33 +1,33 @@
 document.getElementById("loginForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const identificador = document.getElementById("username").value.trim(); // cédula o correo
-  const password = document.getElementById("password").value.trim();
+  const cedula = document.getElementById("username").value.trim(); // solo cédula
+  const clave = document.getElementById("password").value.trim();
 
   const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
   const usuarioEncontrado = usuarios.find(function (usuario) {
-    return (
-      (usuario.cedula === identificador || usuario.correo === identificador) &&
-      usuario.password === password
-    );
+    return usuario.cedula === cedula && usuario.clave === clave;
   });
 
   const mensaje = document.getElementById("message");
 
   if (usuarioEncontrado) {
-    mensaje.textContent = "Inicio de sesión exitoso. Redirigiendo...";
+    // 🔽 Aquí guardas el usuario activo
+    localStorage.setItem("usuarioActivo", JSON.stringify(usuarioEncontrado));
+
+    mensaje.textContent = "✅ Inicio de sesión exitoso. Redirigiendo...";
     mensaje.style.color = "green";
 
-    // Redirigir al menú después de un breve retraso
     setTimeout(function () {
-      window.location.href = "menu.html";
+      window.location.href = "pagina2.html"; // Cambia esto al nombre de tu página principal
     }, 1500);
   } else {
-    mensaje.textContent = "Usuario o contraseña incorrectos.";
+    mensaje.textContent = "❌ Cédula o contraseña incorrectos.";
     mensaje.style.color = "red";
   }
 });
+
 
 
 

@@ -1,119 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de cursos</title>
-    <link rel="stylesheet" href="./styte.css">
-    <script src="./pagina2.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión de Carreras</title>
+  <link rel="stylesheet" href="./stylePagina2.css" />
+  <script defer src="./pagina2.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Logo</h1>
-        <nav> 
-            <a href="">inicio</a> 
-            <a href="">contacto</a>
-            <a href="">¿Quienes somos?</a>
-        </nav>
+  <header>
+    <h1>Logo</h1>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Contacto</a>
+      <a href="#">¿Quiénes somos?</a>
+      <button onclick="cerrarSesion()">Cerrar sesión</button>
+    </nav>
+  </header>
 
-    </header>
-         <div class="container">
-        <div class="form-section">
-             <h2>Gestión de Carreras</h2>
-                <div class="form-group">
-                <input type="text" placeholder="Ingrese la facultad" id="facultad">
-             </div>
-                <div class="form-group">
-                <input type="text" placeholder="Ingrese la modalidad" id="modalidad">
-            </div>
-                <div class="form-group">
-                 <input type="number" placeholder="Ingrese un numero del 1 al 10" id="semestre" min="1" max="10" required>
-            </div>
-                <div class="form-group">
-                 <input type="text" placeholder="Ingrese el estado de la carrera" id="estado">
-             </div>
-               <button class="btn-guardar" onclick="guardarCurso()">Guardar</button>
-            </div>
-            <div class="table-section">
-                <table>
-                     <h2>Listado de Carreras</h2>
-                    <thead>
-                        <!--table row-->
-                        <tr>
-                            <!--Encabezados-->
-                            <th>#</th>
-                            <th>facultad</th>
-                            <th>modalidad</th>
-                            <th>semestres</th>
-                            <th>estado</th>
-                            <th>Opciones</th>
-                        </tr>
-                        <tr>
-                            <!--table Data-->
-                            <td>1</td>
-                            <td>medicina</td>
-                            <td>presencial</td>
-                            <td>10</td>
-                            <td>activa</td>
-                            <td>
-                            <button class="btn-editar">Editar</button>
-                            <button class="btn-eliminar">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <!--table Data-->
-                            <td>2</td>
-                            <td>ingenieria en sistemas</td>
-                            <td>híbrida</td>
-                            <td>8</td>
-                            <td>activa</td>
-                            <td>
-                                <button class="btn-editar">Editar</button>
-                                <button class="btn-eliminar">Eliminar</button>
-                                </td>
-                        </tr>
-                        <tr>
-                            <!--table Data-->
-                            <td>3</td>
-                            <td>derecho</td>
-                            <td>virtual</td>
-                            <td>8</td>
-                            <td>activa</td>
-                            <td>
-                                <button class="btn-editar">Editar</button>
-                                <button class="btn-eliminar">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <!--table Data-->
-                            <td>4</td>
-                            <td>arquitectura</td>
-                            <td>virtual</td>
-                            <td>8</td>
-                            <td>inactiva</td>
-                            <td>
-                                <button class="btn-editar">Editar</button>
-                                <button class="btn-eliminar">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <!--table Data-->
-                            <td>5</td>
-                            <td>psicología</td>
-                            <td>presencial</td>
-                            <td>8</td>
-                            <td>inactiva</td>
-                            <td>
-                                <button class="btn-editar">Editar</button>
-                                <button class="btn-eliminar">Eliminar</button>
-                            </td>
-                        </tr>
+  <div class="container">
+    <div class="form-section">
+      <h2>Gestión de Carreras</h2>
+      <div class="form-group">
+        <input
+          type="text"
+          placeholder="Ingrese la carrera"
+          id="facultad"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          placeholder="Ingrese la modalidad"
+          id="modalidad"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="number"
+          placeholder="Ingrese los semestres del 8 al 10"
+          id="semestre"
+          min="1"
+          max="10"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          placeholder="Ingrese el estado de la carrera"
+          id="estado"
+        />
+      </div>
+      <button class="btn-guardar" onclick="guardarCurso()">Guardar</button>
+    </div>
 
-                    </thead>
-                    <tbody id="tabla-cursos">
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div class="table-section">
+      <h2>Listado de Carreras</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Carrera</th>
+            <th>Modalidad</th>
+            <th>Semestres</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-cursos">
+          <!-- Se llenará dinámicamente con JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
 </body>
 </html>

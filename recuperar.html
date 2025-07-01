@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recuperar Contraseña</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .recuperar-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      width: 350px;
+    }
+    .recuperar-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .recuperar-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .recuperar-box button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .recuperar-box button:hover {
+      background: #0056b3;
+    }
+    #resultado {
+      margin-top: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .volver {
+      margin-top: 15px;
+      text-align: center;
+    }
+    .volver a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="recuperar-box">
+    <h2>Recuperar Contraseña</h2>
+    <input type="email" id="correo" placeholder="Correo electrónico">
+    <button onclick="recuperarClave()">Recuperar</button>
+    <p id="resultado"></p>
+    <div class="volver">
+      <a href="index.html">🔙 Volver al login</a>
+    </div>
+  </div>
+
+  <script>
+    function recuperarClave() {
+      const correo = document.getElementById("correo").value.trim().toLowerCase();
+      const resultado = document.getElementById("resultado");
+
+      if (!correo) {
+        resultado.textContent = "❌ Ingresa tu correo electrónico.";
+        resultado.style.color = "red";
+        return;
+      }
+
+      const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+      const usuario = usuarios.find(u => u.correo === correo);
+
+      if (usuario) {
+        resultado.textContent = "🔐 Tu contraseña es: " + usuario.clave;
+        resultado.style.color = "green";
+      } else {
+        resultado.textContent = "❌ Correo no registrado.";
+        resultado.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
